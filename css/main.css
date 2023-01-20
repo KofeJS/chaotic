@@ -1,0 +1,200 @@
+@font-face {
+    font-family: PressStart2P;
+    src: url("./PressStart2P-Regular.ttf") format("opentype");
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: 'PressStart2P', cursive;
+    background-color: rgb(153, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#seleccion-aspecto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin: 16px;
+}
+
+#tarjetas input {
+    display: none;
+}
+
+#tarjetas input:checked + label {
+    background-color: #3C2A21;
+}
+
+#boton-elegir-aspecto {
+    font-size: 16px;
+    font-family: 'PressStart2P', cursive;
+    color: rgb(255, 238, 99);
+    background-color: rgb(255, 91, 0);
+    width: 180px;
+    height: 30px;
+    border: 2px solid rgb(212, 217, 37);
+    border-radius: 15px;
+    padding: 3px;
+    margin: 24px;
+}
+
+#boton-elegir-aspecto:active {
+    background-color: rgb(212, 217, 37);
+}
+
+#boton-reiniciar {
+    font-size: 16px;
+    font-family: 'PressStart2P', cursive;
+    color: rgb(255, 91, 0);
+    background-color: rgb(255, 238, 99);
+    width: 250px;
+    height: 30px;
+    border: transparent;
+    border-radius: 15px;
+    padding: 3px;
+    margin: 16px 0px 16px 0px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 48px;
+    color: rgb(255, 238, 99);
+    margin: 32px 0px 32px 0px;
+}
+
+.subtitulo {
+    font-size: 24px;
+    color: rgb(255, 238, 99);
+    margin: 24px;
+}
+
+.aspecto-tarjeta {
+    color: rgb(255, 238, 99);
+    background: #a7702e;
+    width: 180px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid rgb(212, 217, 37);
+    padding: 10px;
+    margin: 5px;
+}
+
+.aspecto-tarjeta:hover {
+    cursor: pointer;
+}
+
+.aspecto-tarjeta p {
+    display: none;
+}
+
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ver-mapa .titulo {
+    font-size: 24px;
+}
+
+#mapa {
+    aspect-ratio: auto 800 / 640;
+    border: 2px solid rgb(212, 217, 37);
+}
+
+.boton-movimiento {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 16px;
+}
+.boton-movimiento button {
+    font-size: 16px;
+    font-family: 'PressStart2P', cursive;
+    color: rgb(255, 238, 99);
+    background-color: rgb(255, 91, 0);
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgb(212, 217, 37);
+    padding: 3px;
+    margin: 8px;
+}
+
+#up {
+    grid-column: 2 / 3;
+}
+
+#left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#right {
+    grid-column: 3 /4;
+    grid-row: 2 / 3;
+}
+
+#down {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+
+@media (max-width: 400px) {
+    #tarjetas {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: hidden auto;
+        height: 480px;
+        gap: 8px;
+    }
+    
+    .aspecto-tarjeta {
+        width: 164px;
+        height: 148px;
+        margin: 0px;
+    }
+
+    #boton-elegir-aspecto {
+        margin: 8px;        
+    }
+
+    .titulo {
+        font-size: 32px;
+        margin: 8px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        margin: 8px;
+    }
+
+    .boton-movimiento {
+        display: grid;
+        margin: 32px;
+    }
+
+    .boton-movimiento button {
+        width: 64px;
+        height: 64px;
+    }
+}
